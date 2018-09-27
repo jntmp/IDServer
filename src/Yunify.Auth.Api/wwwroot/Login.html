@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.login').on('click', function (e) {
+                $.ajax('api/auth/token', {
+                    type: "POST",
+                    dataType: "json",
+                    contentType: "application/json",
+                    data: JSON.stringify({
+                        "userName": $('.form-control.userName').val(),
+                        "password": $('.form-control.password').val()
+                    }),
+                    complete: function (res) {
+                        if (res.responseJSON.isError)
+                            alert("Invalid username/password");
+                        else {
+                            window.location.href = "User.html";
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="login-page">
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Login</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div>
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control userName" placeholder="Username" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control password" placeholder="Password" autocomplete="off">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <button class="btn btn-primary login" name="button" value="login">Login</button>
+                                    <button class="btn btn-default" name="button" value="cancel">Cancel</button>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

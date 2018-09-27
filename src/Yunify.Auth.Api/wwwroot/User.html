@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>User</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/bootstrap-table.css" />
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/bootstrap-table.js"></script>
+
+    <script type="text/javascript" src="js/user.js"></script>
+</head>
+<body>
+    <div style="width: 500px;">
+        <table id="table">
+            <thead>
+                <tr>
+                    <th data-field="userId">UserId</th>
+                    <th data-field="firstName">FirstName</th>
+                    <th data-field="lastName">LastName</th>
+                    <th data-field="serial">Serial</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div class="form-group" style="padding:10px;">
+        <button class="btn btn-primary revoke" name="button" value="revoke">Revoke Serial</button>
+        <button class="btn btn-primary grant" name="button" value="grant">Grant Serial</button>
+    </div>
+    
+    <div class="form-group" style="padding:10px;">
+        <button class="btn btn-primary logout" name="button" value="logout">Logout</button>
+        <button class="btn btn-primary delete" name="button" value="delete">Delete me</button>
+    </div>
+</body>
+</html>

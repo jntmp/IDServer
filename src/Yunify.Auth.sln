@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yunify.Auth.Server", "Yunify.Auth.Server\Yunify.Auth.Server.csproj", "{DFB16F74-3691-4CB9-A466-261A2B43B5A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yunify.Auth.Api", "Yunify.Auth.Api\Yunify.Auth.Api.csproj", "{E3863585-2A1B-4097-9AE5-1C86FDA922B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{41614F34-31E6-4641-93EB-5710EEC37AED}"
+	ProjectSection(SolutionItems) = preProject
+		..\tools\provision_db.ps1 = ..\tools\provision_db.ps1
+		..\tools\run_api.ps1 = ..\tools\run_api.ps1
+		..\tools\run_server.ps1 = ..\tools\run_server.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{64729BD4-047A-401B-92AB-C2DDBDD98B74}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFB16F74-3691-4CB9-A466-261A2B43B5A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFB16F74-3691-4CB9-A466-261A2B43B5A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFB16F74-3691-4CB9-A466-261A2B43B5A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFB16F74-3691-4CB9-A466-261A2B43B5A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3863585-2A1B-4097-9AE5-1C86FDA922B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3863585-2A1B-4097-9AE5-1C86FDA922B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3863585-2A1B-4097-9AE5-1C86FDA922B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3863585-2A1B-4097-9AE5-1C86FDA922B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81B6CB47-882F-476C-9700-90D0D4F2CAE6}
+	EndGlobalSection
+EndGlobal
