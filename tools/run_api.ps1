@@ -1,4 +1,4 @@
 
-$projDir = '..\src\Yunify.Auth.Api\'
+$projDir = '..\src\idsrv.api\'
 
 Start-Process -FilePath 'dotnet' -WorkingDirectory $projDir -ArgumentList 'run'
