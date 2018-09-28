@@ -6,7 +6,7 @@ using Yunify.Auth.Server.Model;
 
 namespace Yunify.Auth.Server.Context
 {
-    public class UserDbContext : IdentityDbContext
+    public class UserDbContext : DbContext
     {
         public UserDbContext(DbContextOptions<UserDbContext> options) : base(options) { }
 

@@ -33,21 +33,21 @@ namespace Yunify.Auth.Server
                     options.UseSqlite(connString, b => b.MigrationsAssembly("Yunify.Auth.Server"))
                 );
 
-            services
-                .AddIdentity<UserModel, UserRole>()
-                .AddEntityFrameworkStores<UserDbContext>()
-                .AddUserStore<UserStore>()
-                .AddDefaultTokenProviders();
-
             services.AddTransient<IClientStore, ClientStore>();
             services.AddTransient<IResourceStore, ResourceStore>();
             services.AddTransient<ISerialStore, SerialStore>();
-            
+
+            services
+                .AddIdentity<UserModel, UserRole>()
+                //.AddEntityFrameworkStores<UserDbContext>()
+                //.AddEntityFrameworkStores<ConfigurationStoreContext>()
+                .AddUserStore<UserStore>()
+                .AddDefaultTokenProviders();
+
             services.AddIdentityServer()
                 .AddDeveloperSigningCredential()
                 .AddResourceStore<ResourceStore>()
-                .AddClientStore<ClientStore>()
-                .AddAspNetIdentity<UserModel>();
+                .AddClientStore<ClientStore>();
 
             services.AddAuthentication("Bearer")
                 .AddIdentityServerAuthentication("token", options =>

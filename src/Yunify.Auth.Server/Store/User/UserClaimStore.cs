@@ -12,16 +12,18 @@ namespace Yunify.Auth.Server.Store.User
 {
     partial class UserStore : IUserClaimStore<UserModel>
     {
-        public async Task AddClaimsAsync(UserModel user, IEnumerable<Claim> claims, CancellationToken cancellationToken)
+        public Task AddClaimsAsync(UserModel user, IEnumerable<Claim> claims, CancellationToken cancellationToken)
         {
             var serialClaim = claims.FirstOrDefault(c => c.Type == "serial");
 
-            await _context.UserClaims.AddAsync(new IdentityUserClaim<string>
-            {
-                ClaimType = "serial",
-                ClaimValue = user.Serial,
-                UserId = user.UserId
-            });
+            //await _context.UserClaims.AddAsync(new IdentityUserClaim<string>
+            //{
+            //    ClaimType = "serial",
+            //    ClaimValue = user.Serial,
+            //    UserId = user.UserId
+            //});
+
+            return Task.CompletedTask;
         }
 
         public Task<IList<Claim>> GetClaimsAsync(UserModel user, CancellationToken cancellationToken)
