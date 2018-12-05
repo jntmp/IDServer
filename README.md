@@ -1,13 +1,13 @@
-﻿# Yunify.Auth
+﻿# idsrv.api
 
-The **Yunify.Auth** solution consists of a standalone identity server and a web api server to serve clients.
+The **idsrv.api** solution consists of a standalone identity server and a web api server to serve clients.
 
 ## Setup
 
 Clone the repo and ensure you have at least version `>= 2.1.2` of the .NET Core SDK installed.
 
 #### Provision DB
-Under the `tools` directory, execute the powershell script `provision_db.ps1`, otherwise navigate to `src\Yunify.Auth.Server` and execute
+Under the `tools` directory, execute the powershell script `provision_db.ps1`, otherwise navigate to `src\idsrv.server` and execute
  the following in a command prompt:
 
     dotnet ef database update --context ConfigurationStoreContext
@@ -20,8 +20,8 @@ Under the `tools` directory, execute the powershell script `provision_db.ps1`, o
 Under the `tools` directory, execute the powershell scripts `run_server.ps1` and `run_api.ps1` consecutively, otherwise execute `dotnet run` 
 in the following directories  (_if there are Powershell Execution Policy issues_):
 
- 1. `src\Yunify.Auth.Server`
- 2. `src\Yunify.Auth.Api`
+ 1. `src\idsrv.server`
+ 2. `src\idsrv.api`
 
 They will bind to ports `5000` and `50822` respectively.
 
@@ -77,4 +77,3 @@ For testing requests directly, the below may be called from an Http Client (ie. 
     Authorization: Bearer [access token]
     Content-Type: application/json
 
-[developing...]
